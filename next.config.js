@@ -1,17 +1,19 @@
 /** @type {import('next').NextConfig} */
-// Enable full static export
 const isProd = true;
+const repoName = "dj-crazy-times";
 
-// Your GitHub Pages site URL
-const GITHUB_PAGES_URL = "https://code-by-luis.github.io/dj-crazy-times";
-
-/** @type {import('next').NextConfig} */
+/**
+ * Configure basePath and assetPrefix so that Next.js export
+ * and Next Font work correctly under GitHub Pages:
+ * - basePath ensures pages and assets are output under /dj-crazy-times
+ * - assetPrefix rewrites URLs to match that prefix
+ */
 const nextConfig = {
   output: "export",
-  // Use the full URL for static assets (required by next/font)
-  assetPrefix: isProd ? GITHUB_PAGES_URL : "",
-  // No basePath – pages export to root of 'out/'
-  // GH Pages will serve them under '/dj-crazy-times/'.
+  // When in production, prefix all routes and assets
+  basePath: isProd ? `/${repoName}` : "",
+  assetPrefix: isProd ? `/${repoName}` : "",
+  // Keep folder-style routing to match GitHub Pages
   trailingSlash: true,
   images: {
     unoptimized: true,
