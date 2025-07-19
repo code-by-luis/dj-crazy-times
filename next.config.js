@@ -1,15 +1,17 @@
 /** @type {import('next').NextConfig} */
 const isProd = true;
+const repoName = "dj-crazy-times";
 
-/**
- * Use relative paths for static assets so they resolve correctly
- * under GitHub Pages' /<repo>/ prefix.
- */
+// Use absolute prefixes for GitHub Pages compatibility and next/font
+const basePath = isProd ? `/${repoName}` : "";
+const assetPrefix = isProd ? `/${repoName}` : "";
+
+/** @type {import('next').NextConfig} */
 const nextConfig = {
   output: "export",
-  // Prefix assets with './' in production for correct relative loading
-  assetPrefix: isProd ? "./" : "",
-  // Ensure trailing slashes so pages and assets are served from folders
+  basePath,
+  assetPrefix,
+  // Ensure pages and assets serve from folders on GitHub Pages
   trailingSlash: true,
   images: {
     unoptimized: true,
