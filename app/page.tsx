@@ -24,7 +24,7 @@ export default function Home() {
         </h2>
         <div className="aspect-video w-full bg-black border-4 border-estoniaBlue rounded-lg shadow-[0_0_10px_rgba(0,114,206,0.6)] overflow-hidden">
           <iframe
-            src="https://player.twitch.tv/?channel=naughton&parent=djcrazytimes.derwydd.net"
+            src="https://player.twitch.tv/?channel=naughton&parent=djcrazytimes.com"
             className="w-full h-full"
             allowFullScreen
           />
