@@ -3,18 +3,19 @@ const isProd = true;
 const repoName = "dj-crazy-times";
 
 /**
- * Export entire site into `out/dj-crazy-times/` via `distDir`
- * and use relative asset paths so CSS/JS resolve correctly.
+ * Export entire site into `out/dj-crazy-times` via `distDir`,
+ * apply GitHub Pages paths for both pages and fonts/assets.
  */
 const nextConfig = {
-  // Generate a fully static export
   output: "export",
-  // Override the output directory (for both build and export)
+  // Emit build & export into out/dj-crazy-times
   distDir: `out/${repoName}`,
-  // Keep folder-style routing for HTML files
+  // Serve site under /dj-crazy-times on GitHub Pages
+  basePath: isProd ? `/${repoName}` : "",
+  // Prefix static assets (including next/font files) with /dj-crazy-times/
+  assetPrefix: isProd ? `/${repoName}/` : "",
+  // Use folder-style routing for static export
   trailingSlash: true,
-  // Use relative paths for assets so they work under the subfolder
-  assetPrefix: "./",
   images: {
     unoptimized: true,
   },
