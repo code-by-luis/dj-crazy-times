@@ -3,17 +3,16 @@ const isProd = true;
 const repoName = "dj-crazy-times";
 
 /**
- * Configure basePath and assetPrefix so that Next.js export
- * and Next Font work correctly under GitHub Pages:
- * - basePath ensures pages and assets are output under /dj-crazy-times
- * - assetPrefix rewrites URLs to match that prefix
+ * For GitHub Pages deployment:
+ * - No basePath: export pages to root of the out/ folder
+ * - assetPrefix with trailing slash so static assets load from /repoName/_next/...
+ * - trailingSlash to ensure correct folders
  */
 const nextConfig = {
   output: "export",
-  // When in production, prefix all routes and assets
-  basePath: isProd ? `/${repoName}` : "",
-  assetPrefix: isProd ? `/${repoName}` : "",
-  // Keep folder-style routing to match GitHub Pages
+  // Prefix static asset URLs with '/dj-crazy-times/'
+  assetPrefix: isProd ? `/${repoName}/` : "",
+  // Keep folder-style routing
   trailingSlash: true,
   images: {
     unoptimized: true,
