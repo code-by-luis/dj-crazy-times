@@ -9,7 +9,7 @@ export default function Home() {
       {/* Logo with neon glow (Estonia Blue) */}
       <div className="flex justify-center mb-6">
         <Image
-          src="/dct.png"
+          src="./dct.png"
           alt="DJ CRAZY TIMES"
           width={600}
           height={150}
