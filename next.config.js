@@ -3,17 +3,20 @@ const isProd = true;
 const repoName = "dj-crazy-times";
 
 /**
- * For GitHub Pages deployment:
- * - No basePath: export pages to root of the out/ folder
- * - assetPrefix with trailing slash so static assets load from /repoName/_next/...
- * - trailingSlash to ensure correct folders
+ * Static export configuration for GitHub Pages:
+ * - basePath and assetPrefix ensure correct URL prefixes
+ * - trailingSlash for folder-style routing
  */
+/** @type {import('next').NextConfig} */
 const nextConfig = {
   output: "export",
-  // Prefix static asset URLs with '/dj-crazy-times/'
-  assetPrefix: isProd ? `/${repoName}/` : "",
-  // Keep folder-style routing
+  // Serve app under /dj-crazy-times in production
+  basePath: isProd ? `/${repoName}` : "",
+  // Prefix asset URLs with /dj-crazy-times
+  assetPrefix: isProd ? `/${repoName}` : "",
+  // Use folder pages (e.g., /about/)
   trailingSlash: true,
+  // Fonts and images
   images: {
     unoptimized: true,
   },
