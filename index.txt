@@ -1,5 +1,5 @@
 1:HL["/dj-crazy-times/_next/static/css/8376cc7293515d4d.css","style",{"crossOrigin":""}]
-0:["P9RhzfbLVZzCHo4vtgwVF",[[["",{"children":["__PAGE__",{}]},"$undefined","$undefined",true],"$L2",[[["$","link","0",{"rel":"stylesheet","href":"/dj-crazy-times/_next/static/css/8376cc7293515d4d.css","precedence":"next","crossOrigin":""}]],"$L3"]]]]
+0:["oLpBrfeaWCjAopsGbiSSG",[[["",{"children":["__PAGE__",{}]},"$undefined","$undefined",true],"$L2",[[["$","link","0",{"rel":"stylesheet","href":"/dj-crazy-times/_next/static/css/8376cc7293515d4d.css","precedence":"next","crossOrigin":""}]],"$L3"]]]]
 4:I[6954,[],""]
 5:I[7264,[],""]
 7:I[413,["413","static/chunks/413-1822dc8d3af294e9.js","931","static/chunks/app/page-66fe30c0606e7d3a.js"],"Image"]
