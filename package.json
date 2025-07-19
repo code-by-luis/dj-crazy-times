@@ -3,9 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "build":  "next build",
-    "export": "next export",
-    "deploy": "npm run build && npm run export && gh-pages -d out/dj-crazy-times"
+    "build":     "next build",
+    "export":    "next export",
+    "postexport":"touch out/dj-crazy-times/.nojekyll",
+    "deploy":    "npm run build && npm run export && npm run postexport && gh-pages -d out/dj-crazy-times"
   },
   "homepage": "https://code-by-luis.github.io/dj-crazy-times",
   "dependencies": {
